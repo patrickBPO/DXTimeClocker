@@ -72,7 +72,6 @@ Partial Public Class s
         'Dim TargetLine As String
         'Dim OutputPath As String
         Dim MainPath As String
-        Dim UseInsStruct As InsStruct
         Dim Conn As New MySqlConnection
         Dim Comm As New MySqlCommand
 
@@ -141,15 +140,6 @@ Partial Public Class s
             Timer1.Start()
 
             For Each line As String In File.ReadLines(MyFname) ' Loop over lines in file.
-
-                'If SaveEmpNum <> EMP_NUM Then
-                '    HrAccum = 0
-                '    OTAccum = 0
-                '    DTAccum = 0
-                '    WkAccum = 0
-                '    DyAccum = 0
-                'End If
-                'Debug.Print("Count=" & LineCount & " Incr=" & lcnt)
 
                 If lcnt < LineCount Then
 
@@ -249,12 +239,10 @@ Partial Public Class s
                                     TotDTAccum = 0
                                     TotOTAccum = 0
                                     TotHrAccum = 0
-                                    'SaveEmpNum = EMP_NUM
                                 End If
                             Case 7
                                 PAY_TYPE = col.TrimEnd
-                                'SavePayType = PAY_TYPE
-                                'Call CalculateIT(PAY_TYPE)
+
                             Case 8 '-- 7
                                 Dim SpHrs = Split(col.TrimEnd, ":", 2)
 
@@ -347,7 +335,6 @@ Partial Public Class s
 
                 Debug.Print(EMP_NUM & "-" & SaveEmpNum & "HrAmt=" & HrAccum & " OTAmt=" & OTAccum & " " & line)
                 SaveEmpNum = EMP_NUM
-                'SavePayType = PAY_TYPE
             Next
 CANCELAR:
         Catch ex As FileNotFoundException
