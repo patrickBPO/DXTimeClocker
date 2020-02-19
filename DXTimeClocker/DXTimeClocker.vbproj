@@ -118,6 +118,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\TClock.jpg" />
     <None Include="Images\clock %281%29.png" />
     <Content Include="Images\logo.png" />
     <None Include="Resources\Icon1.ico" />

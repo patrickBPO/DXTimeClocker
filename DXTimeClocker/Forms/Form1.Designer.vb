@@ -27,6 +27,7 @@ Partial Public Class s
     ''' </summary>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(s))
         Me.TxtFilePath = New System.Windows.Forms.TextBox()
         Me.BtnFndFile = New DevExpress.XtraEditors.SimpleButton()
         Me.BtnLdFile = New DevExpress.XtraEditors.SimpleButton()
@@ -122,6 +123,7 @@ Partial Public Class s
         Me.Controls.Add(Me.BtnLdFile)
         Me.Controls.Add(Me.BtnFndFile)
         Me.Controls.Add(Me.TxtFilePath)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.LookAndFeel.SkinName = "Dark Side"
         Me.LookAndFeel.UseDefaultLookAndFeel = False
         Me.Name = "s"
